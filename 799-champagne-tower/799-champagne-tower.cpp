@@ -5,8 +5,8 @@ public:
         tower[0] = {(double)poured};
         
         for(int i = 0; i < query_row; i++) {
-            for(int j = 0; j <= (i + 1); j++) tower[i + 1].push_back(0);
-            for(int j = 0; j <= i; j++) {
+            for(int j = 0; j <= min((i + 1), query_glass + 2); j++) tower[i + 1].push_back(0);
+            for(int j = 0; j <= min(i, query_glass + 1); j++) {
                 double extra = tower[i][j] - 1;
                 if(extra > 0) {
                     tower[i + 1][j] += extra / 2;
