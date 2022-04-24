@@ -14,9 +14,6 @@ public:
     TreeNode* trimBST(TreeNode* root, int low, int high) {
         if(root == NULL) return root;
         
-        TreeNode* left = NULL;
-        TreeNode* right = NULL;
-        
         if(root->val > high) {
             return trimBST(root->left, low, high);
         }
